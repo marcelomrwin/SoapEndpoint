@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:ns0="http://service.anbima.com.br/corp/protocolo" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://service.anbima.com.br/corp/protocolo">
+	<xsd:complexType name="gerarListaProtocolos">
+		<xsd:sequence>
+			<xsd:element name="tipoProtocolo" type="xsd:string" />
+			<xsd:element name="origemProtocolo" type="xsd:string" />
+			<xsd:element name="quantidade" type="xsd:int" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="gerarProtocoloResponse">
+		<xsd:sequence>
+			<xsd:element name="protocoloResponse" type="ns0:protocolo" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="gerarListaProtocolosResponse">
+		<xsd:sequence>
+			<xsd:element name="listaProtocoloResponse" type="ns0:protocolo" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="gerarProtocolo">
+		<xsd:sequence>
+			<xsd:element name="tipoProtocolo" type="xsd:string" />
+			<xsd:element name="origemProtocolo" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="protocolo">
+		<xsd:sequence>
+			<xsd:element name="ano" type="xsd:int" minOccurs="0" />
+			<xsd:element name="codigo" type="xsd:int" minOccurs="0" />
+			<xsd:element name="dataCriacao" type="xsd:dateTime" minOccurs="0" />
+			<xsd:element name="oid" type="xsd:string" minOccurs="0" />
+			<xsd:element name="origem" type="xsd:string" minOccurs="0" />
+			<xsd:element name="tipo" type="xsd:string" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="gerarListaProtocolos" type="ns0:gerarListaProtocolos" />
+	<xsd:element name="gerarProtocoloResponse" type="ns0:gerarProtocoloResponse" />
+	<xsd:element name="gerarListaProtocolosResponse" type="ns0:gerarListaProtocolosResponse" />
+	<xsd:element name="gerarProtocolo" type="ns0:gerarProtocolo" />
+</xsd:schema>
